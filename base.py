@@ -13,3 +13,14 @@ from llama_index import SimpleDirectoryReader
 #################
 from deta import Deta
 
+class ArxivReader_mod(BaseReader):
+    """Arxiv Reader.
+
+    Gets a search query, return a list of Documents of the top corresponding scientific papers on Arxiv.
+    """
+
+    def __init__(
+            self,
+    ):
+        """Initialize with parameters."""
+        super().__init__()
