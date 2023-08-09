@@ -16,8 +16,8 @@ from openai.error import OpenAIError
 from base import  ArxivReader_mod
 ######################
 
-import os
-import sys
+
+
 import openai
 
 ### create the website reader
