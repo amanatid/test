@@ -11,6 +11,7 @@ from fpdf import FPDF
 #################
 from llama_index import SimpleDirectoryReader
 #################
+from deta import Deta
 
 class ArxivReader_mod(BaseReader):
     """Arxiv Reader.
@@ -97,15 +98,7 @@ class ArxivReader_mod(BaseReader):
         def get_paper_metadata(filename):
             return paper_lookup[filename]
 
-       ######## SimpleDirectoryReader = download_loader("SimpleDirectoryReader")
-        arxiv_documents = SimpleDirectoryReader(papers_dir, file_metadata=get_paper_metadata).load_data()
-       #########################################################################
-        # Include extra documents containing the abstracts
-        abstract_documents = []
-        for paper in search_results:
-            d = f"The following is a summary of the paper: {paper.title}\n\nSummary: {paper.summary}"
-            abstract_documents.append(Document(text=d))
-
+      
 
         return arxiv_documents + abstract_documents
 
