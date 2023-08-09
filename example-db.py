@@ -1,6 +1,31 @@
 import streamlit as st
 from deta import Deta
 
+
+####################
+from llama_index import download_loader, VectorStoreIndex
+####################
+
+from langchain.agents import initialize_agent, Tool
+from langchain.llms import OpenAI
+from langchain.chains.conversation.memory import ConversationBufferMemory
+from langchain.embeddings import OpenAIEmbeddings
+
+from openai.error import OpenAIError
+######################
+from base import  ArxivReader_mod
+######################
+
+import os
+import sys
+import openai
+
+### create the website reader
+ArxivReader= download_loader("ArxivReader")
+
+
+
+
 # Data to be written to Deta Base
 with st.form("form"):
     name = st.text_input("Your name")
