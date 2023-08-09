@@ -63,8 +63,7 @@ class ArxivReader_mod(BaseReader):
             sort_by=sort_criterion,
         )
 
-        search_results = list(arxiv_search.results())
-        logging.debug(f"> Successfully fetched {len(search_results)} papers")
+       
        
 
      
