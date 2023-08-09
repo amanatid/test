@@ -92,11 +92,7 @@ class ArxivReader_mod(BaseReader):
                 "URL": paper.entry_id,
                 # "summary": paper.summary
             }
-            paper.download_pdf(dirpath=papers_dir, filename=filename)
-            logging.debug(f"> Downloading {filename}...")
-
-        def get_paper_metadata(filename):
-            return paper_lookup[filename]
+          
 
       
 
